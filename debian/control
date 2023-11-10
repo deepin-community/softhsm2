@@ -17,7 +17,8 @@ Vcs-Git: https://salsa.debian.org/debian/softhsm2.git
 
 Package: softhsm2-common
 Architecture: any
-Depends: ucf,
+Depends: passwd,
+         ucf,
          ${misc:Depends},
          ${shlibs:Depends}
 Conflicts: softhsm-common (<< 2.0)
@@ -87,24 +88,3 @@ Description: cryptographic store accessible through a PKCS #11
  device with a PKCS #11 Cryptographic Token Interface.
  .
  This package contains shared library.
-
-Package: softhsm
-Section: oldlibs
-Pre-Depends: ${misc:Pre-Depends}
-Depends: softhsm2, ${misc:Depends}
-Architecture: all
-Description: cryptographic store accessible through a PKCS #11 (dummy)
- SoftHSM 2 is a software implementation of a generic cryptographic
- device with a PKCS #11 Cryptographic Token Interface.
- .
- This is a transitional package and can be safely removed.
-
-Package: softhsm-common
-Section: oldlibs
-Architecture: all
-Depends: softhsm2-common, ${misc:Depends}
-Description: cryptographic store accessible through a PKCS #11 (dummy)
- SoftHSM 2 is a software implementation of a generic cryptographic
- device with a PKCS #11 Cryptographic Token Interface.
- .
- This is a transitional package and can be safely removed.
